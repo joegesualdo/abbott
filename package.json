@@ -1,0 +1,14 @@
+{
+  "name": "abbott",
+  "version": "0.0.1",
+  "description": "A toy browser engine built with Node.js",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Gesualdo",
+  "license": "MIT"
+}
