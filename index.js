@@ -1,6 +1,6 @@
-var parse = require("./src/parse.js")
+var parse = require("./src/parse-html.js")
 
 module.exports = {
-  parse: parse
+  parseHTML: parseHTML
 }
 

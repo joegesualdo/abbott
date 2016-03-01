@@ -1,7 +1,7 @@
 var Element = require("./element.js")
 var Text = require("./text.js")
 
-function Parser(opts) {
+function HTMLParser(opts) {
   opts = opts || {}
   if (opts.input === undefined) {
     throw new Error("Must provide an input for the parser")
@@ -169,6 +169,7 @@ function Parser(opts) {
     return nodes;
   }
 }
-module.exports = Parser;
+
+module.exports = HTMLParser;
 
 
