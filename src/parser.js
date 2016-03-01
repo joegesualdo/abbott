@@ -58,7 +58,7 @@ function Parser(opts) {
       //   'a'...'z' | 'A'...'Z' | '0'...'9'
       //     source: http://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
       // TODO: improve this mehtod. At this point it will crash if you put a special character lik '!' in the string
-      return (/^[a-zA-Z]+$/.test(character));
+      return (/^[a-zA-Z0-9]+$/.test(character));
     })
     return tagName;
   }
