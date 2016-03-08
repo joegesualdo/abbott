@@ -2,9 +2,27 @@
 // returns a style tree: Each node in this tree includes a pointer to a DOM node, plus its CSS property values:
 //   NOTE: We could add new fields to the dom::Node struct instead of creating a new tree, but I wanted to keep style code out of the earlier “lessons.” This also gives me an opportunity to talk about the parallel trees that inhabit most rendering engines.
 function StyleNode() {
+  var that = this;
+
   this.node;
   this.specifiedValues = {}
   this.children = []
+
+  // Return the specified value of a property if it exists, otherwise undefined.
+  this.value = function(name) {
+    return that.specifiedValues[name]
+  }
+  // The value of the `display` property (defaults to inline).
+  this.display = function() {
+    var display = that.value("display")
+    if (display === "block") {
+      return "block";
+    } else if (display === "none") {
+      return "none";
+    } else {
+      return "inline";
+    }
+  }
 }
 
 // Selector matching
@@ -60,7 +78,6 @@ function matchingRules(elementData, stylesheet) {
       
     }
   })
-  console.log(matchedRules)
   return matchedRules
 }
 

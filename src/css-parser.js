@@ -207,7 +207,9 @@ function CSSParser(opts){
     }
   }
   this.parseLength = function(){
-    return [that.parseFloat(), that.parseUnit()]
+    var val = that.parseFloat();
+    var unit = that.parseUnit()
+    return [val, unit]
   }
   //TODO Should i return a Nubmer
   this.parseFloat = function(){
@@ -220,6 +222,8 @@ function CSSParser(opts){
   this.parseUnit = function(){
     var identifier = that.parseIdentifier()
     switch(identifier){
+      // THis will be undefined sometimes (I.e {left: 10}) when we don't put a identifier like 'px'
+      // // TODO we should probably do something when one isn't included
       case 'px':
         return 'px'
         break;
